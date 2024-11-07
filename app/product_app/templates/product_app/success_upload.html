@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Uploaded File</h1>
+    <h2> {{ message }} </h2>
+    <form action="{% url 'success' pk %}" method="GET">
+        {{ pk }}
+        <button value="{{ pk }}" >  Записать данные в базу </button>
+        <input type="hidden" value="Записать данные в базу">
+    </form>
+
+    <h2> {{ pk }} </h2>
+
+{% endblock content %}

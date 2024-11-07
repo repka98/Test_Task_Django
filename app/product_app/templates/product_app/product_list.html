@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <form method="post">
+          {% csrf_token %}
+            <br/>
+          {{ form.date_start.label}}
+            <br/>
+            <br/>
+            {{ form.date_start }}
+            <br/>
+            <br/>
+            {{ form.date_end.label }}
+            <br/>
+            <br/>
+            {{ form.date_end }}
+            <br/>
+            <br/>
+          <input type="submit" value="Submit">
+        </form>
+            <br/>
+            <h2>Products</h2>
+             {{ products }}
+            <br/>
+            <h2>Products by date</h2>
+             {{ products_count_by_date_lt }}
+<br/>
+<h2>Products by all</h2>
+            {{ products_count_all }}
+<br/>
+<h2>Products by period</h2>
+        {{ products_count_by_period }}
+<br/>
+
+         <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+             <tbody>
+
+             </tbody>
+<!--            <tbody>-->
+<!--                {% for product in products %}-->
+<!--                    <tr>-->
+<!--                        <td>{{ product.number_app }}</td>-->
+<!--                        <td>{{ product.user_name }}</td>-->
+<!--                        <td>{{ product.user_last_name }}</td>-->
+<!--                    </tr>-->
+<!--                {% endfor %}-->
+<!--            </tbody>-->
+        </table>
+{% endblock content %}

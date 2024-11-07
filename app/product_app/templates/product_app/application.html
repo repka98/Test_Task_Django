@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <title>{{ title }}</title>
+  <h1>{{ title }}</h1>
+  <form action="{% url 'application_upload' %}" method="GET">
+    <button value="" > Загрузка файла данных </button>
+    <input type="hidden" value="Загрузка файла данных">
+  </form>
+
+
+{% endblock content %}
