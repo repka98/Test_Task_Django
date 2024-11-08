@@ -175,7 +175,7 @@ def get_data(request):
         # Заполнение датами из формы
         app_date_start = form.cleaned_data['date_start']
         app_date_end = form.cleaned_data['date_end']
-        message = f"Даты заполнили"
+        message = f"Даты заполнены"
         message_error = f""
     else:
         # Если какой-то из дат нет, то на сегодняшнее число и ошибку заполнения
