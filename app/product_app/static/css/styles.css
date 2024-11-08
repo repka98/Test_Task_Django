@@ -1,3 +1,17 @@
 body{ font-family: Verdana;}
 h1{color:navy;}
 img{width:350px;}
+table {
+    width: 50%;
+    margin: auto;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}

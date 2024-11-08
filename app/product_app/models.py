@@ -88,7 +88,7 @@ class CoordinationApplication(models.Model):
 
 class StatusBook(models.Model):
 	STATUS = (
-		('sent_for-processing','Отправлена в обработку'),
+		('sent_for_processing','Отправлена в обработку'),
 		('returned_for_clarification','Возвращена на уточнение'),
 		('sent_for_processing_repeated','Отправлена в обработку (повторно)'),
 		('processing_completed','Обработка завершена'),

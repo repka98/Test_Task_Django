@@ -4,28 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b3ee76a-9d9b-4d62-b168-83448233dd30" name="Changes" comment="Добавлена модель для работы с заявками">
-      <change afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/product_app/analyze.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/product_app/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/product_app/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/product_app/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/product_app/application.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/product_app/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/product_app/product_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/product_app/product_upload.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/product_app/success_upload.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Test_Task_Django.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Test_Task_Django.iml" afterDir="false" />
+    <list default="true" id="1b3ee76a-9d9b-4d62-b168-83448233dd30" name="Changes" comment="Обновлено приожение для работы с файлами">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/product_app/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/product_app/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/product_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/product_app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/product_app/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/product_app/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/product_app/templates/product_app/product_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/product_app/templates/product_app/product_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/product_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/product_app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/users/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/users/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/web_app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/web_app/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/web_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/web_app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,13 +110,34 @@
       <option name="project" value="LOCAL" />
       <updated>1730817595249</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Добавлена все миграции для работы с базой">
+      <option name="closed" value="true" />
+      <created>1730995382695</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1730995382696</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Базовые конфигурации проекта" />
     <MESSAGE value="Добавлено приложение с пользователями" />
     <MESSAGE value="Добавлена модель для работы с заявками" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена модель для работы с заявками" />
+    <MESSAGE value="Добавлена все миграции для работы с базой" />
+    <MESSAGE value="Обновлено приожение для работы с файлами" />
+    <option name="LAST_COMMIT_MESSAGE" value="Обновлено приожение для работы с файлами" />
   </component>
 </project>

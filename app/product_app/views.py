@@ -51,7 +51,71 @@ def application_list_view(request):
     return HttpResponse(template.render(request=request, context=context))
 
 
+def get_count_application_all():
+    return Application.objects.count()
+
+
+def get_count():
+    return Application.objects.count()
+
+
+class ApplicationRequests:
+
+    @staticmethod
+    def get_count_application_all():
+        return Application.objects.count()
+
+
+    @staticmethod
+    def get_count_application_by_date_lt(date_lt: datetime):
+        return Application.objects.filter(created_at__lt=date_lt).count()
+
+    @staticmethod
+    def get_count_value_application_by_date_range(date_gt: datetime, date_lt: datetime):
+        ids_by_period = Application.objects.filter (
+            created_at__range=(date_gt, date_lt)).values_list('pk', flat=True)
+        count_ids_by_period = ids_by_period.count()
+        return {'count_ids_by_period': count_ids_by_period, 'ids_by_period': ids_by_period}
+
+
+    @staticmethod
+    def def_count_appeal(ids, appeal_name: str):
+        appeal_id = AppealBook.objects.get(appeal=appeal_name)
+        all_appeals = AppealApplication.objects.filter(
+            appeal_id = appeal_id).count()
+
+        ids_appeals = AppealApplication.objects.filter(
+            application__in=ids
+        ).filter(appeal_id = appeal_id).count()
+
+        return {'ids_appeals': ids_appeals, 'all_appeals': all_appeals}
+
+    @staticmethod
+    def get_count_status(ids, status_name: str):
+        status_id = StatusBook.objects.get(status=status_name)
+        all_status = StatusApplication.objects.filter(
+            status_id = status_id).count()
+        ids_status = StatusApplication.objects.filter(
+            application__in = ids
+        ).filter(status_id = status_id).count()
+        return {'ids_status': ids_status, 'all_status': all_status, }
+
+    @staticmethod
+    def get_count_packages(ids):
+        all_packages = PackageHash.objects.all().count()
+        ids_packages = Application.objects.filter(pk__in=ids).values_list('hash_data', flat=True).distinct().count()
+        return {'ids_packages': ids_packages, 'all_packages': all_packages, }
+
+
+    @staticmethod
+    def get_count_user(ids):
+        all_users = UserClient.objects.all().count()
+        ids_users = Application.objects.filter(pk__in=ids).values_list('user_app', flat=True).distinct().count()
+        return {'ids_users': ids_users, 'all_users': all_users, }
+
+
 def get_data(request, data=None):
+    app_cl = ApplicationRequests()
     template = loader.get_template('product_app/product_list.html')
     form = DateOrder(request.POST)
     if form.is_valid():
@@ -61,19 +125,105 @@ def get_data(request, data=None):
         form = DateOrder()
         app_date_start = datetime.today().date()
         app_date_end = datetime.today().date()
-    products_count_all = Application.objects.count()
-    products_count_by_date_lt = Application.objects.filter(created_at__lt=app_date_end).count()
-    products_count_by_period = Application.objects.filter(created_at__range=(app_date_start, app_date_end)).count()
-    ic()
-    context = {
-        'products': [products_count_all],
-        'form': form,
-        "products_count_by_date_lt": products_count_by_date_lt,
-        "products_count_all": products_count_all,
-        "products_count_by_period": products_count_by_period,
+    products_count_all = app_cl.get_count_application_all()
+    products_count_by_date_lt = app_cl.get_count_application_by_date_lt(app_date_end)
+    # products_count_by_date_lt = Application.objects.filter(created_at__lt=app_date_end).count()
+    product_by_period = app_cl.get_count_value_application_by_date_range(app_date_start, app_date_end)
+    # products_ids_by_period = Application.objects.filter(created_at__range=(app_date_start, app_date_end)).values_list('pk', flat=True)
+    #  = products_ids_by_period.count()
+    appeal_duplicates = app_cl.def_count_appeal(ids=product_by_period['ids_by_period'], appeal_name='Дубликат')
+    appeal_added = app_cl.def_count_appeal(ids=product_by_period['ids_by_period'], appeal_name='Добавление')
+    appeal_extended = app_cl.def_count_appeal(ids=product_by_period['ids_by_period'], appeal_name='Расширение')
+
+    status_processing_completed = app_cl.get_count_status(ids=product_by_period['ids_by_period'], status_name='Обработка завершена')
+    status_sent_for_processing = app_cl.get_count_status(ids=product_by_period['ids_by_period'], status_name='Отправлена в обработку')
+    status_returned_for_clarification = app_cl.get_count_status(ids=product_by_period['ids_by_period'], status_name='Возвращена на уточнение')
+
+    packages = app_cl.get_count_packages(ids=product_by_period['ids_by_period'])
+
+    users = app_cl.get_count_user(ids=product_by_period['ids_by_period'])
+    products = {
+        'product_by_period': product_by_period['count_ids_by_period'],
+        'products_count_all': products_count_all,
     }
 
-    return HttpResponse(template.render(request=request, context=context))
+    context = [
+        {
+            'name': 'Загруженных заявок',
+            'products': products,
+        },
+        {
+            'name': 'Дубли',
+            'products': appeal_duplicates,
+        },
+        {
+            'name': 'На создании',
+            'products': appeal_added,
+        },
+        {
+            'name': 'На расширении',
+            'products': appeal_extended,
+        },
+        {
+            'name': 'Обработка завершена',
+            'products': status_processing_completed,
+        },
+        {
+            'name': 'Возвращена на уточнение',
+            'products': status_returned_for_clarification,
+        },
+        {
+            'name': 'Отправлена в обработку',
+            'products': status_sent_for_processing,
+        },
+        {
+            'name': 'Пакетов',
+            'products': packages,
+        },
+        {
+            'name': 'Пользователей',
+            'products': users,
+        },
+
+    ]
+
+
+    # context = products | appeal_duplicates | appeal_added | appeal_extended | status_processing_completed | status_returned_for_clarification | status_sent_for_processing | packages | users
+
+    # context = zip(
+    #     products,
+    #     appeal_duplicates,
+    #     appeal_added,
+    #     appeal_extended,
+    #     status_processing_completed,
+    #     status_sent_for_processing,
+    #     status_returned_for_clarification,
+    #     packages,
+    #     users,
+    # )
+    # context = {
+    #     'products': [products_count_all],
+    #     'form': form,
+    #     "products_count_by_date_lt": products_count_by_date_lt,
+    #     "products_count_all": products_count_all,
+    #     'product_by_period': {
+    #         'count_ids_by_period': product_by_period['count_ids_by_period'],
+    #     },
+    #     "appeal_duplicates": {
+    #         'all_appeals': appeal_duplicates['all_appeals'],
+    #         'ids_appeals': appeal_duplicates['ids_appeals'],
+    #     },
+    #     "appeal_added": {
+    #         'all_appeals': appeal_added['all_appeals'],
+    #         'ids_appeals': appeal_added['ids_appeals'],
+    #     },
+    #     "appeal_extended": {
+    #         'all_appeals': appeal_extended['all_appeals'],
+    #         'ids_appeals': appeal_extended['ids_appeals'],
+    #     },
+    # }
+
+    return HttpResponse(template.render(request=request, context= {'form': form, 'product_list': context}))
 
 
 

@@ -18,39 +18,20 @@
             <br/>
           <input type="submit" value="Submit">
         </form>
-            <br/>
-            <h2>Products</h2>
-             {{ products }}
-            <br/>
-            <h2>Products by date</h2>
-             {{ products_count_by_date_lt }}
-<br/>
-<h2>Products by all</h2>
-            {{ products_count_all }}
-<br/>
-<h2>Products by period</h2>
-        {{ products_count_by_period }}
-<br/>
-
-         <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-             <tbody>
-
-             </tbody>
-<!--            <tbody>-->
-<!--                {% for product in products %}-->
-<!--                    <tr>-->
-<!--                        <td>{{ product.number_app }}</td>-->
-<!--                        <td>{{ product.user_name }}</td>-->
-<!--                        <td>{{ product.user_last_name }}</td>-->
-<!--                    </tr>-->
-<!--                {% endfor %}-->
-<!--            </tbody>-->
+        <table border="1">
+          <tr>
+              <th> Название </th>
+              <th> Период </th>
+              <th> Все время </th>
+          </tr>
+          {% for app in product_list %}
+            <tr>
+                <!-- Отображаем ключи и значения словаря -->
+                <td>{{ app.name }}</td>
+                {% for key, value in app.products.items %}
+                    <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
         </table>
 {% endblock content %}
