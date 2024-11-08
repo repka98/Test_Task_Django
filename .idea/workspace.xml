@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b3ee76a-9d9b-4d62-b168-83448233dd30" name="Changes" comment="Обновлено приожение для работы с файлами">
+    <list default="true" id="1b3ee76a-9d9b-4d62-b168-83448233dd30" name="Changes" comment="Обновлено приложения для создания таблицы отчета">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/product_app/analyze.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/product_app/analyze.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/product_app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/product_app/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/product_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/product_app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/product_app/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/product_app/static/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/product_app/templates/product_app/product_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/product_app/templates/product_app/product_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/product_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/product_app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/product_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/product_app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,13 +38,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Nikita/Django_main_rep/Django_main_rep&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "E:/Nikita/Django_main_rep/Django_main_rep",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Nikita\Test_Task_Django\app\product_app" />
@@ -118,7 +121,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730995382696</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Обновлено приложения для создания таблицы отчета">
+      <option name="closed" value="true" />
+      <created>1731063671497</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1731063671497</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,6 +149,7 @@
     <MESSAGE value="Добавлена модель для работы с заявками" />
     <MESSAGE value="Добавлена все миграции для работы с базой" />
     <MESSAGE value="Обновлено приожение для работы с файлами" />
-    <option name="LAST_COMMIT_MESSAGE" value="Обновлено приожение для работы с файлами" />
+    <MESSAGE value="Обновлено приложения для создания таблицы отчета" />
+    <option name="LAST_COMMIT_MESSAGE" value="Обновлено приложения для создания таблицы отчета" />
   </component>
 </project>

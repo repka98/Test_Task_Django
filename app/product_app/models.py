@@ -7,6 +7,9 @@ from users.models import UserClient
 
 
 class PackageHash(models.Model):
+	"""
+	Класс для хранения данных о пакетах заявок
+	"""
 	data = models.DateTimeField(auto_now_add=True)
 	hash = models.CharField(max_length=255)
 
@@ -35,6 +38,9 @@ class Application(models.Model):
 
 
 class AppealBook(models.Model):
+	"""
+	Класс для хранения справочной информации о состоянии заявок
+	"""
 	APPEAL = (
 		('added', 'Добавление'),
 		('extended', 'Расширение'),
@@ -50,7 +56,6 @@ class AppealBook(models.Model):
 class AppealApplication(models.Model):
 	"""Класс для хранения данных о состоянии заявки"""
 
-
 	appeal_id = models.ForeignKey(AppealBook, related_name='appeal_book', on_delete=models.CASCADE)
 	application = models.ForeignKey(Application, related_name='appeal', on_delete=models.CASCADE)
 	appeal_view = models.CharField(max_length=200, default='')
@@ -62,6 +67,9 @@ class AppealApplication(models.Model):
 
 
 class CoordinationBook(models.Model):
+	"""
+	Класс для хранения справочной информации о согласовании заявок
+	"""
 	COORDINATION = (
 		('material_not_added', 'Материал не выбран'),
 		('coordination_no_required', 'Согласование не требуется'),
@@ -87,6 +95,9 @@ class CoordinationApplication(models.Model):
 
 
 class StatusBook(models.Model):
+	"""
+	Класс для хранения справочной информации о статусах заявок
+	"""
 	STATUS = (
 		('sent_for_processing','Отправлена в обработку'),
 		('returned_for_clarification','Возвращена на уточнение'),
@@ -103,7 +114,6 @@ class StatusBook(models.Model):
 
 class StatusApplication(models.Model):
 	"""Класс для хранения данных о статусе заявки"""
-
 
 	status_id = models.ForeignKey(StatusBook, related_name='status_book', on_delete=models.CASCADE)
 	application = models.ForeignKey(Application, related_name='status', on_delete=models.CASCADE)
@@ -126,4 +136,7 @@ class TimeToProcessingReport(models.Model):
 
 
 class UploadFiles(models.Model):
+	"""
+	Класс для хранения информации о загруженных файлах для обработки данных
+	"""
 	file = models.FileField(upload_to='uploads_model')
