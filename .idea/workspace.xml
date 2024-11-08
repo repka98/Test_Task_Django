@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b3ee76a-9d9b-4d62-b168-83448233dd30" name="Changes" comment="Обновлен EADME">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="1b3ee76a-9d9b-4d62-b168-83448233dd30" name="Changes" comment="Обновлен README и некоторые названия кнопко и комментарии">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/product_app/templates/product_app/product_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/product_app/templates/product_app/product_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/product_app/templates/product_app/product_upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/product_app/templates/product_app/product_upload.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/product_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/product_app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +139,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731068906122</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Обновлен README и некоторые названия кнопко и комментарии">
+      <option name="closed" value="true" />
+      <created>1731070532142</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1731070532142</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -166,6 +170,7 @@
     <MESSAGE value="Обновлено приложения для создания таблицы отчета" />
     <MESSAGE value="Обновлена док коммент для проекта" />
     <MESSAGE value="Обновлен EADME" />
-    <option name="LAST_COMMIT_MESSAGE" value="Обновлен EADME" />
+    <MESSAGE value="Обновлен README и некоторые названия кнопко и комментарии" />
+    <option name="LAST_COMMIT_MESSAGE" value="Обновлен README и некоторые названия кнопко и комментарии" />
   </component>
 </project>

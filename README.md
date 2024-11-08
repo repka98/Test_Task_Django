@@ -27,7 +27,7 @@
 Откроем новый терминал.
 Когда завершиться сборка приложения необходимо создать супер пользователя:
 
-    docker-compose run --rm web-app sh -c "python manage.py creratesuperuser"  
+    docker-compose run --rm web-app sh -c "./manage.py creratesuperuser"  
 
 Задать имя и пароль пользователя.
 
